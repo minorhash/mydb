@@ -1,13 +1,11 @@
 var Database = require('better-sqlite3');
 var db = new Database('public/dat/db/pal1.db');
-var sku;
 
-exports.selTmp=function(arg2){
+exports.selTmp=function(usr){
 var stm=db.prepare('select * from tmp where usr=?');
 
 try{
-var row=stm.all(arg2);
-//sku=row.sku;
+var row=stm.all(usr);
     
 }catch(err){console.log(err);}
 
